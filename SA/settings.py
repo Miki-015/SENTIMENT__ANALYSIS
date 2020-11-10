@@ -24,7 +24,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'sunk#em%jxp!pis5k#y_9hmqw+5brygvl-21x8h&-r!gguzgf('
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['sentiment-analysis-015.herokuapp.com','localhost']
 
