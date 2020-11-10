@@ -24,7 +24,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'sunk#em%jxp!pis5k#y_9hmqw+5brygvl-21x8h&-r!gguzgf('
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['sentiment-analysis-015.herokuapp.com','localhost']
 
@@ -42,6 +42,7 @@ INSTALLED_APPS = [
 ]
 
 MEDIA_ROOT= os.path.join(BASE_DIR, 'media')
+MEDIA_URL='/media/'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
