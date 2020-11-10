@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="en">
+{% load static %}
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+
+    <title>answer_questions</title>
+      <style>
+          p {
+            text-align: center;
+            font-size: 20px;
+            font-weight: italic;
+            text-shadow: 5px 5px 5px lightblue;
+            color: black;
+            font-family: "calibri";
+            }
+      </style>
+      <style>
+       body {
+          background-image: url("{% static 'sentiment/b1.jpeg' %}");
+          background-repeat: repeat;
+             }
+       </style>
+       <style>
+          .col-md-3 {
+               display: inline-block;
+               margin-left: 400px
+                    }
+          body .carousel-indicator li {
+               background-color: blue;
+               }
+         body .carousel-control-prev-icon,
+         body .carousel-control-next-icon {
+               background-color: blue;
+               }
+         body .no-padding {
+               padding-left:0,
+               padding-right:0;
+               }
+
+       </style>
+       <style>
+           label{
+             color: white;
+             font-size: 18px;
+              }
+       </style>
+  </head>
+  <body>
+
+
+     <nav class="navbar navbar-dark bg-dark">
+  <!-- Navbar content -->
+       <div class="container">
+         <a class="navbar-brand" href="#"> Answer these questions... </a>
+       </div>
+     </nav>
+   <br/>
+
+      <div class="container">
+         <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+  <ol class="carousel-indicators">
+    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
+  </ol>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+         <div class="col-xs-4 col-sm-4 col-md-3" align="center">
+          <div class="card" align="center"  style="...">
+              <div class="card-body">
+              <h5 class="card-title">1. {{ e }}</h5>
+              <p class="card-text">
+                   a)    {{ a }}
+                 <br/>
+                   b)    {{ b }}
+                 <br/>
+                   c)    {{ c }}
+                 <br/>
+                   d)    {{ d }}
+              </p>
+              </div>
+           </div>
+         </div>
+    </div>
+    <div class="carousel-item">
+        <div class="col-xs-3 col-sm-3 col-md-3">
+          <div class="card" style="width: 18rem;">
+              <div class="card-body">
+              <h5 class="card-title">2. {{ u }}</h5>
+              <p class="card-text">
+                   a)    {{ v }}
+                 <br/>
+                   b)    {{ w }}
+                 <br/>
+                   c)    {{ x }}
+                 <br/>
+                   d)    {{ y }}
+              </p>
+              </div>
+           </div>
+         </div>
+    </div>
+    <div class="carousel-item">
+          <div class="col-xs-3 col-sm-3 col-md-3">
+          <div class="card" style="width: 18rem;">
+              <div class="card-body">
+              <h5 class="card-title">3. {{ k }}</h5>
+              <p class="card-text">
+                   a)    {{ l }}
+                 <br/>
+                   b)    {{ m }}
+                 <br/>
+                   c)    {{ n }}
+                 <br/>
+                   d)    {{ o }}
+              </p>
+              </div>
+           </div>
+         </div>
+    </div>
+     <div class="carousel-item">
+         <div class="col-xs-3 col-sm-3 col-md-3">
+          <div class="card" style="width: 18rem;">
+              <div class="card-body">
+              <h5 class="card-title">4. {{ p }}</h5>
+              <p class="card-text">
+                   a)    {{ q }}
+                 <br/>
+                   b)    {{ r }}
+                 <br/>
+                   c)    {{ s }}
+                 <br/>
+                   d)    {{ t }}
+              </p>
+              </div>
+           </div>
+         </div>
+    </div>
+    <div class="carousel-item">
+        <div class="col-xs-3 col-sm-3 col-md-3">
+          <div class="card" style="width: 18rem;">
+              <div class="card-body">
+              <h5 class="card-title">5. {{ f }}</h5>
+              <p class="card-text">
+                   a)    {{ g }}
+                 <br/>
+                   b)    {{ h }}
+                 <br/>
+                   c)    {{ i }}
+                 <br/>
+                   d)    {{ j }}
+              </p>
+              </div>
+           </div>
+         </div>
+    </div>
+  </div>
+  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+      </div>
+     <form action="/sentiment/get_ans" method="get">
+
+
+                  <div class="form-group">
+                     <div class="shadow-lg p-3 mb-5 bg-blue rounded">
+                     <label for="exampleFormControlTextarea1">Type your answers here with space in between.</label>
+                     <textarea class="form-control" name="text1" id="exampleFormControlTextarea1" rows="3" style="margin-top: 0px; margin-bottom: 0px; height: 50px;"></textarea>
+                     </div>
+                       <button type="submit" class="btn btn-outline-primary">Done</button>
+                  </div>
+
+
+     </form>
+
+
+
+
+    <!-- Optiosnal JavaScript; choose one of the two! -->
+
+    <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+
+    <!-- Option 2: jQuery, Popper.js, and Bootstrap JS
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
+    -->
+  </body>
+</html>
