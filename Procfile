@@ -1,1 +1,1 @@
-web: gunicorn SA.wsgi --log-file -
+web: gunicorn SA.wsgi --lo https://sentiment-analysis-015.herokuapp.com/g-file -
