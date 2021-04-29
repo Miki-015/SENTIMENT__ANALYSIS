@@ -85,7 +85,7 @@ def final_output(request):
             if score['neg'] > score['pos']:
                 mes="No matter what you are going through , there's always a  light at the end of the tunnel."
                 au=" -DEMI LOVATO "
-                return("NEGATIVE  SENTIMENT")
+                return("NEGATIVE  SENTIMENT", mes, au)
             elif score['neg'] < score['pos']:
 
                 mes="Never bend your head. Always hold it high. Look the world straight in the eye."
@@ -141,16 +141,17 @@ def get_ans(request):
     tokenized_words = word_tokenize(cleaned_text, "english")
 
     final_words = []
+    # Tokenized the text.
     for word in tokenized_words:
         if word not in stopwords.words('english'):
             final_words.append(word)
         lemma_words = []
-
+    #Lemmatized the text
     for word in final_words:
         word = WordNetLemmatizer().lemmatize(word)
         lemma_words.append(word)
     emotion_list = []
-
+   # Pre processing of emotions file
     file = open("sentiment/emotions.txt", "r")
     for line in file:
         clear_line = line.replace("\n", '').replace(",", '').replace("'", '').strip()
@@ -160,7 +161,7 @@ def get_ans(request):
     file.close()
 
     w = Counter(emotion_list)
-
+    #Calculating polarity score
     def sentiment_analyse(sentiment_text):
         score = SentimentIntensityAnalyzer().polarity_scores(sentiment_text)
         print(score)
